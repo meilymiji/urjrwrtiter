@@ -24,4 +24,11 @@ if st.button('Submit'):
         messages=messages_so_far
     )
     st.markdown('**AI response:**')
-    print(response)
+    vocab_dict = response.choices[-1].message.content
+
+    sd = json.loads(vocab_dict)
+
+    print (sd)
+    vocab_df = pd.DataFrame.from_dict(sd)
+    print(vocab_df)
+    st.table(vocab_df)
