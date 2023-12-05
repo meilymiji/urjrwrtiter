@@ -1,10 +1,13 @@
 import streamlit as st
 import openai
+import json
+import pandas as pd
 
 user_api_key = st.sidebar.text_input("OpenAI API key", type="password")
+
 client = openai.OpenAI(api_key=user_api_key)
 
-prompt = """Act as AI writer in English. You  will recieve a topic that contains the topic's objective and some background information. Write a paragraph that related to the topic. The paragraph should be at least 50 words. You can write more than one paragraph."""
+prompt = """Act as a high school student writing a paragraph in English. You will recieve a topic that contains the topic's objective and some background information. Write a paragraph that related to the topic. The paragraph should be at least 50 words. You can write more than one paragraph."""
 
 st.title('Your Junior Writer')
 st.markdown('Input the topic. \n\ Do not forget to put an objective and some background information in the topic. :)')
