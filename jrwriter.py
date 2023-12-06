@@ -12,7 +12,7 @@ prompt = """Act as a high school student writing a paragraph in English. You wil
 st.title('Your Junior Writer')
 st.markdown('Input the topic. \n Do not forget to put an objective and some background information in the topic :)')
 
-user_input = st.text_area('Enter an objective and some background information')
+user_input = st.text_input('Enter an objective and some background information')
 
 if st.button('Submit'):
     messages_so_far = [
